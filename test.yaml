@@ -1,0 +1,13 @@
+apiVersion: tekton.dev/v1
+kind: TaskRun
+metadata:
+  name: printer-test
+spec:
+  taskSpec:
+      steps:
+        - name: test
+          ref:
+            name: printer
+          params:
+            - name: commands
+              value: "Hello, I am of type string"
